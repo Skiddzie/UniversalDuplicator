@@ -1,6 +1,5 @@
 import os
-
-from zplTemplate import *
+from zplTemplate import templateFill
 
 while(True):
     barcode = input(">")

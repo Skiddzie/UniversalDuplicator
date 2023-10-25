@@ -1,5 +1,5 @@
 #add or remove parameters depending on what the client needs
-def template(field1):
+def templateFill(field1):
     return """
 
     ^XA
