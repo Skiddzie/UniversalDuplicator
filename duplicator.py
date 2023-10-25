@@ -1,8 +1,21 @@
 import os
+import keyboard
 from zplTemplate import templateFill
-
 while(True):
-    barcode = input(">")
+    barcode = ""
+    while True:
+        event = keyboard.read_event()
+        
+        if event.event_type == keyboard.KEY_DOWN and event.name == 'enter':
+            break  # Exit the loop when 'enter' is pressed
+        elif event.event_type == keyboard.KEY_DOWN:
+            if event.name != 'enter':
+                # Append the key's name to the barcode string
+                barcode += event.name
+
+    print("Barcode:", barcode)
+
+    
     template = templateFill(barcode)
 
     print(template)
